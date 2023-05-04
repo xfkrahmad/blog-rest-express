@@ -51,7 +51,7 @@ export const loginHandler = async (req, res) => {
     await userExists.save();
     res.cookie('jwt', refreshToken, {
       httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000,
+      maxAge: 60 * 60 * 1000,
     });
     res.status(200).json({
       success: true,
